@@ -1,0 +1,46 @@
+<!--pages/magzien/magzien.wxml-->
+<view class="recommend">
+ 
+      <view class="recommendTop">
+        <text class="recommendTopTitle">{{recommend.date}}</text>
+        <text >——————</text>
+        <text >{{recommend.title}}</text>
+      </view>
+      <image src="{{recommend.imgSrc}}" class="img" />
+      <view class="recommendBottom">
+          <text class="recommendAdd">+</text>
+          <text class="recommendLable" data-typeId="{{item.typeId}}" catchtap="onArticleContent"  wx:for="{{markType}}" wx:key="{{typeId}}">{{item.type}}</text>
+          <!-- <text class="recommendLable">男性穿搭</text>
+          <text class="recommendLable">心理</text>
+          <text class="recommendLable">深度阅读</text>
+          <text class="recommendLable">人生整理叔</text>
+          <text class="recommendLable">读书</text>
+          <text class="recommendLable">日韩剧</text>
+          <text class="recommendLable">吃喝攻略</text> -->
+          <text class="recommendLable">······</text>
+
+      </view>
+    
+</view>
+<view class="list">
+  <view class="containerItem" wx:for="{{articleList}}" wx:key="{{id}}">
+    <view class="itemTop">
+        <image src="{{item.markPeopleAvatar}}" />   <!--发布内容的用户头像 -->
+        <text >{{item.markPeople}}等{{item.markCount}}人马克了</text>
+    </view>
+    <image mode="widthFix" src="{{item.articleImgSrc}}" class="itemPoster"/>       <!--内容的poster -->
+    <view class="itemContent">{{item.articleTitle}}</view>
+    <view class="itemBottom">
+        <text >{{item.articleType}}</text>
+        <view class = "funArea">
+            <image src="/image/list/article/icon/Icon_more.png" catchtap="contentMenu" data-articleType="{{item.articleType}}"/>
+            <button open-type="share" class="button"> 
+               <image src="/image/list/article/icon/Icon_relay.png" />
+            </button>
+            <image wx:if="{{listLike[item.id]}}" data-articleLike="{{item.id}}" catchtap="likeChange" src="/image/list/article/icon/Icon_circle_fill.png" />
+            <image wx:else data-articleLike="{{item.id}}" catchtap="likeChange" src="/image/list/article/icon/Icon_circle.png" />
+        </view>
+    </view>
+  </view>
+  
+</view>

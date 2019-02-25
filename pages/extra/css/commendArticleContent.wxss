@@ -1,0 +1,63 @@
+page{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.top{
+    height: 200rpx;
+    width: 100%;
+
+}
+.top .title{
+    display: inline-block;
+    padding: 50rpx 10rpx 40rpx 10rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 48rpx;
+    width: 100%;
+}
+.top view{
+    width: 100%;
+    height:50rpx;
+    padding: 0rpx 10rpx;
+}
+.top view .writer{
+    float: left;
+    line-height: 50rpx;
+    font-size: 32rpx;
+    color: #aaa;
+}
+.top view .time{
+    margin-left: 1em;
+    float: left;
+    line-height: 50rpx;
+    font-size: 32rpx;
+    color: #aaa;
+}
+.bottom{
+    margin-top: 45rpx;
+    width: 100%;
+}
+.bottom text{
+    display: block;
+    width: 100%;
+    text-indent: 2em;
+    margin: 0rpx;
+    line-height: 60rpx;
+    font-size: 32rpx;
+}
+.readCount{
+    height: 80rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.readCount .readText{
+    color: #888;
+    margin-left: 20rpx;
+}
+.readCount .readNum{
+    color: #888;
+    margin-left: 20rpx;
+}

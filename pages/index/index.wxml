@@ -1,0 +1,7 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+<image src="/images/cat3.jpg" />
+<text class="name">没名</text>
+<text class="wel" bind:tap = "jumpTo">欢迎来到小莹的狗窝</text>
+</view>
+

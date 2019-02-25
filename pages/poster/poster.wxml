@@ -1,0 +1,7 @@
+<!--pages/poster/poster.wxml-->
+<view class="container">
+    <image src="/images/picture.png" />
+    <text >是否要卸下残红熄灭骄纵才会被施以恩宠</text>
+    <text >也曾是朱砂心口月光床头怀一腔热血孤勇</text>
+    <text class="writer">---既生厌 - 昙骨</text>
+</view>

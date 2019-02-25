@@ -1,0 +1,70 @@
+/* pages/magzien/magzien.wxss */
+@import "../extra/css/commenList.wxss";
+page{
+    background-color: rgb(233, 227, 227);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.recommend{
+    height: 1300rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.recommend .recommendTop{
+    height: 180rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30rpx;
+}
+.recommend .recommendTop .recommendTopTitle{
+    font-size: 52rpx;
+    letter-spacing: 0.2em;
+    font-size: 600;
+}
+.recommend .recommendTop text{
+    font-size: 28rpx;
+    color: #111;
+}
+.recommend .img{
+    height: 750rpx;
+    width: 90%;
+    margin-top: 30rpx;
+}
+.recommend .recommendBottom{
+    display: block;
+    height: 200rpx;
+    width: 90%;
+    
+
+}
+.recommend .recommendBottom .recommendAdd{
+   display: inline-block;
+   line-height: 60rpx;
+   text-align: center;
+   height: 60rpx;
+   width: 60rpx;
+   background-color: #000;
+   color: #fff;
+   font-weight: 900;
+   border: 1px solid #000;
+   margin-top: 30rpx;
+   margin-right: 20rpx;
+}
+.recommend .recommendBottom .recommendLable{
+    display: inline-block;
+    margin-top: 30rpx;
+    height: 50rpx;
+    border: 1px solid #000;
+    text-align: center;
+    font-size: 32rpx;
+    line-height: 50rpx;
+    padding: 5rpx 15rpx;
+    margin-right: 20rpx;
+}

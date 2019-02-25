@@ -1,0 +1,27 @@
+/* pages/index/index.wxss */
+page{
+    background-color: #00b26a;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+image{
+    width: 160rpx;
+    height: 160rpx;
+    border: 0px solid #fff;
+    border-radius: 50%;
+}
+.name{
+    font-size: 16px;
+    color: rgb(189, 189, 180);
+    margin-top: 10px;
+}
+.wel{
+    padding: 5px 20px;
+    border: 1px solid #000;
+    margin-top: 100px;
+    font-weight: 600;
+}

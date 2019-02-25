@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/articleContent/articleContent",
+    "pages/magzien/magzien",
+    
+    "pages/poster/poster",
+    "pages/magzienContent/magzienContent"
+    
+    
+  ]
+}

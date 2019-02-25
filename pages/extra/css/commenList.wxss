@@ -1,0 +1,80 @@
+.list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.containerItem{
+    
+    width:90%;
+    background-color: #fff;
+    margin-top: 40rpx;
+}
+.containerItem .itemTop{
+    height: 100rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.containerItem .itemTop image{
+    height: 80rpx;
+    width: 80rpx;
+    border: 0px solid #000;
+    border-radius: 50%;
+    margin-left: 20rpx;
+}
+.containerItem .itemTop text{
+    font-size: 32rpx;
+    color:rgb(196, 191, 191);
+    margin-left: 30rpx;
+}
+.containerItem .itemPoster{
+    width: 100%;
+}
+.containerItem .itemContent{
+    width:100%;
+    height:120rpx;
+}
+.containerItem .itemBottom{
+    position: relative;
+    height: 110rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.containerItem .itemBottom text{
+    border: 1rpx solid #000;
+    padding: 8rpx 20rpx;
+    font-size: 32rpx;
+    margin-left: 20rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+}
+.containerItem .itemBottom .funArea{
+
+    height: 64rpx;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+}
+.containerItem .itemBottom .funArea image{
+    height: 64rpx;
+    width: 64rpx;
+    margin-right: 25rpx;
+}
+.containerItem .itemBottom .funArea .button{
+    height: 64rpx;
+    width: 64rpx;
+    margin-right: 25rpx;
+    padding: 0px;
+    background-color: transparent;
+}
+.containerItem .itemBottom .funArea .button::after{
+    content: "";
+    border: none;
+}
+.containerItem .itemBottom .funArea .button image{
+    height: 64rpx;
+    width: 64rpx;
+}

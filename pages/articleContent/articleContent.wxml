@@ -1,0 +1,71 @@
+<!--pages/articleContent/articleContent.wxml-->
+<view class="top">
+    <text class="title">{{articleContent.title}}</text>
+    <view>
+        <text class="writer">{{articleContent.author}}</text>
+        <text class="time">{{articleContent.publishTime}}</text>
+    </view>
+</view>
+<view class="middle" wx:if="{{itemId == 3}}">
+  <swiper indicator-dots="true" autoplay="{{true}}" interval="3000">
+      <swiper-item wx:for="{{articleContent.banner}}" wx:key="{{index}}">
+          <image src="{{item}}" />
+      </swiper-item>
+  </swiper>
+</view>
+<view class="middleVideo" wx:elif="{{itemId == 10}}">
+    <video src="{{articleContent.video.src}}" id="videoId" />
+    <cover-view class="coverWrapper" catch:tap="playVideo" wx:if="{{isHidden}}">
+      <cover-image src="{{articleContent.video.poster}}" class="coverDuck"></cover-image>
+      <cover-view class="coverButton">
+        <cover-image src="http://pics.sc.chinaz.com/Files/pic/icons128/989/WMP12_003.png" class="playImg"></cover-image>
+        <cover-view class="playTime">10'</cover-view>
+      </cover-view>
+    </cover-view>
+</view>
+<view class="middleAudio" wx:elif="{{itemId == 11}}">
+    <view class="left" catch:tap="onStauteChange"><image hidden="{{isPlay}}" mode="widthFix" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545929552379&di=3500e8a9a8d06300bc4b416ddf47bd65&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F02%2F22%2F03%2F59affbe651d7b_610.jpg" />
+    <image hidden="{{!isPlay}}" mode="widthFix" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545929534388&di=319b3b14f622443b6afc3477714ff3bc&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F39%2F20%2F5812da0707091_610.jpg" />
+    </view>
+    <view class="right">
+        <view class="rightText">
+            <text class="title">{{articleContent.audio.audioTitle}}</text>
+            <text class="info">{{articleContent.audio.from}}</text>
+        </view>
+        <view class="progress">
+            <progress percent="{{precent}}" border-radius="50rpx" activeColor="#00b064"  stroke-width="3"/>
+            <view class="spanButton" bind:touchmove="onSpanButtonMove" bind:touchend="onSpanButtonEnd" bind:touchstart="onSpanButtonStart" style="left:{{left}}"></view>
+        </view>
+        <view class="timeText">
+            <text class="start">{{time(currentTime)}}</text>
+            <text class="over">{{time(articleContent.audio.duration)}}</text>
+        </view>
+    </view>
+</view>
+<view class="bottom">
+    <text  wx:for="{{fliter(articleContent.content)}}" wx:key="{{index}}">{{item}}</text>
+</view>
+<view class="readCount">
+   <text class="readText">阅读</text>
+   <text class="readNum">{{articleContent.readNum}}</text>
+</view>
+<wxs module="fliter">
+    function fliter(text){
+        if(!text){
+           return text;
+        }
+        //var reg = getRegExp("\\n","g")
+        var arr = text.split("\n");
+        return arr;
+    }
+    module.exports = fliter; 
+</wxs>
+<wxs module="time">
+    function time (time){
+        var minus = Math.floor(time/60);
+        var second =Math.floor(time%60);
+        return minus >= 10 ?( second >= 10 ? minus+":"+second : minus+":0"+second  ): ( second >= 10 ? "0"+ minus +":" + second : "0"+ minus +":0" + second  );
+    }
+    module.exports = time;
+</wxs>
+

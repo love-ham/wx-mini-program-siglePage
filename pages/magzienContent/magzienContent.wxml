@@ -1,0 +1,41 @@
+<!--pages/magzienContent/magzienContent.wxml-->
+<view class="poster">
+      <view class="image"><image src="{{titleData.imgSrc}}" /></view>   
+      <view class="title">
+        <text >{{titleData.title}}</text>
+        <view >
+            <view class="control">
+            
+              <button open-type="share" class="button"> 
+               <image src="/image/list/article/icon/Icon_relay.png" />
+              </button>
+              <view >
+               <image src="/image/list/article/icon/Icon_more.png" catchtap="contentMenu" data-articleType="{{item.articleType}}"/>
+              </view>
+           </view>
+        </view>     
+      </view>
+</view>
+<view class="list">
+  <view class="containerItem" wx:for="{{articleList}}" wx:key="{{id}}">
+    <view class="itemTop">
+        <image src="{{item.markPeopleAvatar}}" />   <!--发布内容的用户头像 -->
+        <text >{{item.markPeople}}等{{item.markCount}}人马克了</text>
+    </view>
+    <image mode="widthFix" src="{{item.articleImgSrc}}" class="itemPoster" catch:tap="jumpToArticleContent" data-id="{{item.id}}"/>       <!--内容的poster -->
+    <view class="itemContent" catch:tap="jumpToArticleContent" data-id="{{item.id}}">{{item.articleTitle}}</view>
+    <view class="itemBottom">
+        <text >{{item.publishTime}}</text>
+        <view class = "funArea">
+            <image src="/image/list/article/icon/Icon_more.png" catchtap="contentMenu" data-articleType="{{item.articleType}}"/>
+            <button open-type="share" class="button"> 
+               <image src="/image/list/article/icon/Icon_relay.png" />
+            </button>
+            <image wx:if="{{listLike[item.id]}}" data-articleLike="{{item.id}}" catchtap="likeChange" src="/image/list/article/icon/Icon_circle_fill.png" />
+            <image wx:else data-articleLike="{{item.id}}" catchtap="likeChange" src="/image/list/article/icon/Icon_circle.png" />
+        </view>
+    </view>
+  </view>
+  
+</view>
+
